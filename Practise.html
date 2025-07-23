@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #222;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      color: #f5a623;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #f5a623;
+    }
+
+    main {
+      padding-top: 80px; /* to offset fixed header */
+      max-width: 900px;
+      margin: 0 auto;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    section {
+      padding: 60px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    /* Hero Section */
+    #hero {
+      text-align: center;
+      background: #222;
+      color: #f5a623;
+      border-radius: 8px;
+      padding: 100px 20px;
+      box-shadow: 0 0 10px rgba(245, 166, 35, 0.5);
+    }
+
+    #hero h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    #hero p {
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* About */
+    #about {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+    }
+
+    #about img {
+      flex: 1 1 250px;
+      border-radius: 50%;
+      max-width: 250px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    #about div {
+      flex: 2 1 400px;
+    }
+
+    #about h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #f5a623;
+    }
+
+    #about p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    /* Skills */
+    #skills ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding-left: 0;
+    }
+
+    #skills li {
+      background: #f5a623;
+      color: #222;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-weight: 600;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: background 0.3s ease;
+      cursor: default;
+    }
+
+    #skills li:hover {
+      background: #e59400;
+    }
+
+    /* Projects */
+    #projects .project-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .project {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+    }
+
+    .project h4 {
+      color: #f5a623;
+      margin-bottom: 10px;
+    }
+
+    .project p {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .project a {
+      text-decoration: none;
+      color: #222;
+      font-weight: 700;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+
+    .project a:hover {
+      border-color: #f5a623;
+    }
+
+    /* Contact */
+    #contact form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    #contact input, #contact textarea {
+      padding: 12px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      resize: vertical;
+    }
+
+    #contact button {
+      background: #f5a623;
+      border: none;
+      padding: 15px;
+      font-weight: 700;
+      color: #222;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    #contact button:hover {
+      background: #e59400;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px 10px;
+      color: #999;
+      font-size: 0.9rem;
+      background: #222;
+      margin-top: 40px;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      #about {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      #about div {
+        flex: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Lakshmi</h1>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero">
+  <h2>Hello, I'm Lakshmi Prasanna</h2>
+  <p>Developer & UI/UX Designer passionate about building scalable, user-friendly web applications with clean code and great design.</p>
+</section>
+
+<section id="about">
+  <section id="about">
+      <img src="https://i.pravatar.cc/250" alt="Lakshmi Prasanna Photo" />
+      <div>
+        <h3>About Me</h3>
+        <p>Innovative UI/UX Designer with a solid foundation in front-end development, including expertise in HTML5, CSS3, and React. With over 4+ years of experience designing and developing responsive, user-centered web applications, I specialize in crafting intuitive interfaces that enhance usability and engagement across all devices.
+
+Adept in tools like Figma, Adobe XD, Sketch, and Adobe Creative Suite, I focus on building accessible, pixel-perfect designs, backed by thoughtful user journeys and scalable design systems. I’ve collaborated closely with developers, product owners, and stakeholders to translate complex ideas into elegant, functional interfaces.Additionally, I have a working knowledge of Business Intelligence (BI) tools, SQL, and R, which helps me understand data-driven design decisions and contribute to product strategy with user behavior insights and analytical thinking.</p>
+        <p>When I'm not coding, you'll find me exploring new tech trends, sketching UI ideas, or hiking outdoors.</p>
+      </div>
+    </section>
+  <h3>Background</h3>
+  <p> I’ve had a creative and evolving journey into the tech world, blending my background in visual communication and UI/UX design with strong technical skills. 
+    I began my career in the creative industry and later transitioned into tech, gaining experience in frontend development and full-stack Java projects. 
+    Over time, I’ve expanded my toolkit with data analytics, SQL, Python, R, and business intelligence (BI) tools — bringing a unique mix of design thinking and data-driven decision-making. </p>
+  <blockquote>"I love crafting user-friendly digital experiences and making sense of data — and I haven’t looked back since."</blockquote>
+
+  <h3>Interests</h3>
+  <p> In my spare time, I explore UI/UX trends, build frontend components with React, and analyze data using SQL, Python, and BI dashboards.
+    Currently, I’m sharpening my data analytics and BI skills while continuing to design seamless digital experiences.
+    Other interests include product design, emerging tech, personal finance, reading, health & wellness, and exploring the power of AI in creativity. </p>
+
+  <h3>Current Role</h3>
+  <p> I’m currently working as a UI/UX Designer, focused on intuitive design systems, wireframes, and improving user journeys.
+    Previously, I worked as a Full Stack Java Developer, leading both frontend and backend work across scalable systems.
+    I’ve also worked with SQL, Python, R, and BI tools to generate insights that support better user and business outcomes.
+    I’m actively seeking opportunities where I can combine UI/UX, frontend, and data to build impactful tech products.</p>
+</section>
+ <section id="skills">
+        <h2>My Skills</h2>
+        <div class="skills">
+            <!-- Frontend Section -->
+        <div class="skills-column">
+            <input type="checkbox" id="frontend" style="display:none;">
+            <label for="frontend">🎨 Frontend Development</label>
+            <div class="skill-list">
+                <div class="skill">⚛️ React.js</div>
+                <div class="skill">📜 JavaScript / TypeScript</div>
+                <div class="skill">📜Flexbox & Responsive Design</div>
+                <div class="skill">🎨 CSS3 </div>
+                <div class="skill">🖼️ HTML5</div>
+            </div>
+        </div>
+
+        <!-- UX Design & Research-->
+        <div class="skills-column">
+            <input type="checkbox" id="Design" style="display:none;">
+            <label for="Design">🎨UX Design & Research</label>
+            <div class="skill-list">
+                <div class="skill">Wireframing</div>
+                <div class="skill">Prototyping</div>
+                <div class="skill">Interaction Design</div>
+                <div class="skill">User Flows</div>
+                <div class="skill">Competitive Analysis</div>
+                <div class="skill">Mapping</div>
+                <div class="skill">WCAG 2.1</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- UI/UX Design Section -->
+    <input type="checkbox" id="uiux" style="display:none;">
+    <label for="uiux">🎨 UI/UX Design</label>
+    <div class="skill-list">
+        <div class="skill">📐 Figma</div>
+        <div class="skill">🖌️ Adobe XD</div>
+        <div class="skill">🏞️ Adobe Creative Suite</div>
+        <div class="skill">📝 Sketch</div>
+        <div class="skill">📝 InVision</div>
+        <div class="skill">Zeplin & Principle</div>
+        <div class="skill">📊 Wireframing & Prototyping</div>
+        <div class="skill">👨‍💻 User Journey Mapping</div>
+    </div>
+
+    <!-- Design  Section -->
+    <input type="checkbox" id="Design " style="display:none;">
+    <label for="Design ">📐Design </label>
+    <div class="skill-list">
+        <div class="skill">Atomic Design</div>
+        <div class="skill">Token-based Design</div>
+        <div class="skill">Component-driven UI</div>
+        <div class="skill">Cross-platform Consistency</div>
+    </div>
+
+<!-- Agile Environment-->
+    <input type="checkbox" id="Agile" style="display:none;">
+    <label for="Agile">Agile Environment</label>
+    <div class="skill-list">
+        <div class="skill">Scrum</div>
+        <div class="skill">Sprint Planning</div>
+        <div class="skill">GitHub</div>
+        <div class="skill">GitLab</div>
+        <div class="skill">Slack</div>
+    </div>
+    <!-- Data-Driven Design< -->
+    <input type="checkbox" id="Data<" style="display:none;">
+    <label for="Data">📦 Data-Driven Design<</label>
+    <div class="skill-list">
+        <div class="skill">🗄️ MySQL</div>
+        <div class="skill">User Research</div>
+        <div class="skill">Surveys</div>
+        <div class="skill">📊 Tableau / Power BI & Data Visualization</div>
+         <div class="skill">🐍 R</div>
+         <div class="skill">🐘 PHP</div>
+          <div class="skill">Python</div>
+         <div class="skill">Analytics</div>
+        <div class="skill">🖥️ WordPress / Shopify</div>
+        <div class="skill">A/B Testing</div>
+        <div class="skill">🐧 Linux Administration</div>
+    </div>
+</section> 
+    <section id="projects">
+      <h3>Projects</h3>
+      <div class="project-list">
+        <div class="project">
+          <h4>Salon & Spa Website App </h4>
+          <p>A full-stack web app to manage insurance claims, built with React, Spring Boot, and AWS.</p>
+          <a href="https://github.com/princeseth/hair-loss-claims" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        </div>
+
+        <div class="project">
+          <h4>Clothing App</h4>
+          <p>Streamlined order processing and live tracking system with React and Spring Boot.</p>
+          <a href="https://github.com/princeseth/fuel-supply-chain" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        </div>
+
+        <div class="project">
+          <h4>Carbon Footprint Calculator</h4>
+          <p>A simple web app to estimate carbon emissions with clean UI and React.</p>
+          <a href="https://github.com/princeseth/carbon-footprint" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h3>Contact Me</h3>
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <p id="formMessage" style="text-align:center; margin-top:15px;"></p>
+    </section>
+  </main>
+
+  <script>
+    // Smooth scroll for nav links
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(anchor.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Simple contact form submission simulation
+    const form = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      formMessage.textContent = 'Sending...';
+
+      setTimeout(() => {
+        formMessage.textContent = 'Thank you for reaching out! I will get back to you soon.';
+        form.reset();
+      }, 1500);
+    });
+  </script>
+</body>
+</html>
