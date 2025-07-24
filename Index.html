@@ -147,23 +147,58 @@
       gap: 30px;
     }
 
-    .project {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+   /* Projects */
+    #projects h2 {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 50px;
+      color: #111;
+      font-weight: 600;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+      flex-grow: 1;
+    }
+    .gallery-item {
+      background-color: #f9f9f9;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .gallery-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .project-info {
       padding: 20px;
-      transition: transform 0.3s ease;
+      text-align: left;
     }
-
-    .project:hover {
-      transform: translateY(-5px);
+    .project-info h3 {
+      font-family: 'Georgia', serif;
+      font-size: 1.4rem;
+      margin-bottom: 8px;
     }
-
-    .project h4 {
-      color: #f5a623;
-      margin-bottom: 10px;
+    .project-info p {
+      font-size: 0.95rem;
+      color: #777;
+      margin: 0;
     }
-
     #contact form {
       max-width: 500px;
       margin: 0 auto;
@@ -301,97 +336,32 @@ Adept in tools like Figma, Adobe XD, Sketch, and Adobe Creative Suite, I focus o
         </div>
       </div>
     </section>
- <section id="Project">
-  <h2>Projects</h2>
-    h1 {
-      text-align: center;
-      font-size: 2.8rem;
-      margin-bottom: 50px;
-      color: #111;
-      font-weight: 600;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 40px;
-      max-width: 1000px;
-      margin: 0 auto;
-      flex-grow: 1;
-    }
-
-    .gallery-item {
-      background-color: #f9f9f9;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .gallery-item:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: cover;
-    }
-
-    .project-info {
-      padding: 20px;
-      text-align: left;
-    }
-
-    .project-info h3 {
-      font-family: 'Georgia', serif;
-      font-size: 1.4rem;
-      margin-bottom: 8px;
-    }
-
-    .project-info p {
-      font-size: 0.95rem;
-      color: #777;
-    }
-  </style>
-
-  <!-- Load Font Awesome for icons -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</head>
-<body>
-  <h1>Projects</h1>
-
-  <div class="gallery">
-    <a class="gallery-item" href="https://github.com/valluripalli27/mine-/blob/main/Salon.html">
-      <img src="images/salon.jpg" alt="Salon Project" />
-      <div class="project-info">
-        <h3>Salon Booking App</h3>
-        <p>BeautyPlus • 2024</p>
+<section id="projects">
+      <h2>Projects</h2>
+      <div class="gallery">
+        <a class="gallery-item" href="https://github.com/valluripalli27/mine-/blob/main/Salon.html" target="_blank" rel="noopener noreferrer">
+          <img src="images/salon.jpg" alt="Salon Project" />
+          <div class="project-info">
+            <h3>Salon Booking App</h3>
+            <p>BeautyPlus • 2024</p>
+          </div>
+        </a>
+        <a class="gallery-item" href="https://github.com/valluripalli27/clothing-app-/blob/main/index.html" target="_blank" rel="noopener noreferrer">
+          <img src="images/Cloth.jpg" alt="Clothing App" />
+          <div class="project-info">
+            <h3>Clothing E-Commerce</h3>
+            <p>Fashionista • 2019</p>
+          </div>
+        </a>
+        <a class="gallery-item" href="https://github.com/valluripalli27/Carbon-Footprint-Calculator/blob/main/index.html" target="_blank" rel="noopener noreferrer">
+          <img src="images/carbon.jpg" alt="Carbon Calculator" />
+          <div class="project-info">
+            <h3>Carbon Footprint Calculator</h3>
+            <p>GreenStep • 2024</p>
+          </div>
+        </a>
       </div>
-    </a>
-
-    <a class="gallery-item" href="https://github.com/valluripalli27/clothing-app-/blob/main/index.html">
-      <img src="images/https://github.com/valluripalli27/mine-/blob/main/Cloth.jpg" alt="Clothing App" />
-      <div class="project-info">
-        <h3>Clothing E-Commerce</h3>
-        <p>Fashionista • 2019</p>
-      </div>
-    </a>
-
-    <a class="gallery-item" href="https://github.com/valluripalli27/Carbon-Footprint-Calculator/blob/main/index.html">
-      <img src="images/carbon.jpg" alt="Carbon Calculator" />
-      <div class="project-info">
-        <h3>Carbon Footprint Calculator</h3>
-        <p>GreenStep • 2024</p>
-      </div>
-    </a>
-  </div>
     </section>
-
     <section id="contact">
       <h3>Contact Me</h3>
       <form id="contactForm">
