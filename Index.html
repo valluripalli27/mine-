@@ -261,7 +261,7 @@
     <h1>꧁𝕷𝕻꧂ </h1>
     <nav>
       <a href="#hero">Home</a>
-      <a href="https://aboutse.netlify.app">About</a>
+     <a href="https://aboutse.netlify.app">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
@@ -381,7 +381,6 @@
   </footer> 
 
    <script>
-    // Only intercept clicks on internal anchors (#...)
    document.querySelectorAll('nav a').forEach(anchor => {
   const href = anchor.getAttribute('href');
   if (href && href.startsWith('#')) {
@@ -392,7 +391,6 @@
     });
   }
 });
-
   </script>
 
 <script>
@@ -412,13 +410,6 @@
     hero.style.backgroundImage = backgrounds[0];
     setInterval(changeHeroBackground, 10000);
 
-    document.querySelectorAll('nav a').forEach(anchor => {
-      anchor.addEventListener('click', e => {
-        e.preventDefault();
-        const target = document.querySelector(anchor.getAttribute('href'));
-        target.scrollIntoView({ behavior: 'smooth' });
-      });
-    });
 
     const form = document.getElementById('contactForm');
     const formMessage = document.getElementById('formMessage');
