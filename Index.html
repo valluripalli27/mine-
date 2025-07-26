@@ -260,27 +260,28 @@
     <h1>꧁𝕷𝕻꧂ </h1>
     <nav>
       <a href="#hero">Home</a>
-      <a href="https://aboutse.netlify.app" target="_blank" rel="noopener noreferrer">About</a>
+      <a href="https://aboutse.netlify.app">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
+ <!-- JavaScript for smooth scroll ONLY for # links -->
   <script>
-  document.querySelectorAll('nav a').forEach(anchor => {
-    const href = anchor.getAttribute('href');
-    if (href.startsWith('#')) {
-      anchor.addEventListener('click', e => {
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    }
-  });
-</script>
+    document.querySelectorAll('nav a').forEach(anchor => {
+      const href = anchor.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      }
+    });
+  </script>
 
   <main>
     <section id="hero">
