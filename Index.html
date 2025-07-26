@@ -382,16 +382,17 @@
 
    <script>
     // Only intercept clicks on internal anchors (#...)
-    document.querySelectorAll('nav a').forEach(anchor => {
-      const href = anchor.getAttribute('href');
-      if (href && href.startsWith('#')) {
-        anchor.addEventListener('click', e => {
-          e.preventDefault();
-          const target = document.querySelector(href);
-          if (target) target.scrollIntoView({ behavior: 'smooth' });
-        });
-      }
+   document.querySelectorAll('nav a').forEach(anchor => {
+  const href = anchor.getAttribute('href');
+  if (href && href.startsWith('#')) {
+    anchor.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
     });
+  }
+});
+
   </script>
 
 <script>
