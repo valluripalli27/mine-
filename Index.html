@@ -307,26 +307,7 @@ Adept in tools like Figma, Adobe XD, Sketch, and Adobe Creative Suite, I focus o
     <img src="https://cdn-icons-png.flaticon.com/24/5968/5968866.png" alt="Medium" style="width:24px; height:24px;">
   </a>
 </footer>
-  <script>
-    document.querySelectorAll('nav a').forEach(anchor => {
-      anchor.addEventListener('click', e => {
-        e.preventDefault();
-        const target = document.querySelector(anchor.getAttribute('href'));
-        target.scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-
-    const form = document.getElementById('contactForm');
-    const formMessage = document.getElementById('formMessage');
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      formMessage.textContent = 'Sending...';
-      setTimeout(() => {
-        formMessage.textContent = 'Thank you! I will get back to you soon.';
-        form.reset();
-      }, 1500);
-    });
-  </script>
+ 
 
 <script>
     const hero = document.getElementById('hero');
