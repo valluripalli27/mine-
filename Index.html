@@ -124,6 +124,65 @@
       border-radius: 6px;
       font-size: 1rem;
     }
+      #projects .project-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+   /* Projects */
+    #projects h2 {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 50px;
+      color: #111;
+      font-weight: 600;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+      flex-grow: 1;
+    }
+    .gallery-item {
+      background-color: #f9f9f9;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .gallery-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .project-info {
+      padding: 20px;
+      text-align: left;
+    }
+    .project-info h3 {
+      font-family: 'Georgia', serif;
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+    .project-info p {
+      font-size: 0.95rem;
+      color: #777;
+      margin: 0;
+    }
+
 
     form button {
       display: block;
@@ -134,6 +193,36 @@
       border: none;
       border-radius: 6px;
       cursor: pointer;
+    }
+ #contact form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    #contact input, #contact textarea {
+      padding: 12px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      resize: vertical;
+    }
+
+    #contact button {
+      background: #f5a623;
+      border: none;
+      padding: 15px;
+      font-weight: 700;
+      color: #222;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    #contact button:hover {
+      background: #e59400;
     }
 
     footer {
