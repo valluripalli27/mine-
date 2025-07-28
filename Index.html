@@ -107,12 +107,15 @@
       margin-top: 10px;
     }
 
-    .skill {
-      background: white;
-      padding: 8px 12px;
-      border-radius: 20px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
+     /* Existing styles... */
+
+  #skills {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), 
+                      url('https://images.unsplash.com/photo-1581093458791-5c4ef4a1617b');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 
     form input, form textarea {
       display: block;
@@ -201,14 +204,35 @@
       flex-direction: column;
       gap: 15px;
     }
+   
+ #contact {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                      url('https://images.unsplash.com/photo-1492724441997-5dc865305da7');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 
-    #contact input, #contact textarea {
+   #contact input,
+    #contact textarea {
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid #fff;
+      color: white;
       padding: 12px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-      resize: vertical;
+      font-size: 1.1rem;
+      outline: none;
+      font-weight: 600;
+      margin-bottom: 20px;
     }
+
+    #contact input::placeholder,
+    #contact textarea::placeholder {
+      color: black;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
 
     #contact button {
       background: #f5a623;
@@ -351,16 +375,18 @@
         </a>
       </div>
     </section>
-    <section id="contact">
+       <section id="contact">
       <h3>Contact Me</h3>
       <form id="contactForm">
-        <input type="text" id="name" placeholder="Your Name" required />
-        <input type="email" id="email" placeholder="Your Email" required />
-        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+        <input type="text" id="name" placeholder="YOUR NAME" required />
+        <input type="email" id="email" placeholder="YOUR EMAIL" required />
+        <textarea id="message" rows="5" placeholder="YOUR MESSAGE" required></textarea>
         <button type="submit">Send</button>
       </form>
       <p id="formMessage" style="text-align:center; margin-top:15px;"></p>
     </section>
+
+
   </main>
 
 <!-- Footer -->
